@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>代理商桌面工具</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="代理商桌面工具"/>
+    <meta name="description" content="代理商桌面工具"/>
+    <meta name="author" content="叶绍亭"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/agent-tools/asserts/images/favicon.ico" />
+
+    <!-- bootstrap -->
+    <link type="text/css" rel="stylesheet" href="/agent-tools/asserts/js/bootstrap/css/bootstrap.css?version=1.0.0" />
+    <link type="text/css" rel="stylesheet" href="/agent-tools/asserts/js/bootstrap/css/bootstrap-theme.css?version=1.0.0" />
+    <!-- Font awesome icon -->
+    <link type="text/css" rel="stylesheet" href="/agent-tools/asserts/css/font-awesome/css/font-awesome.css?version=1.0.0" />
+    <!--[if IE 7]>
+    <link type="text/css" rel="stylesheet" href="/agent-tools/asserts/css/font-awesome/css/font-awesome-ie7.css?version=1.0.0" />
+    <![endif]-->
+
+    <!-- HTML5 Support for IE -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/agent-tools/asserts/js/html5shim.js?version=1.0.0"></script>
+    <![endif]-->
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/agent-tools/asserts/js/jquery/jquery.js?version=1.0.0"></script>
+
+
+    <!-- bootstrap -->
+    <script type="text/javascript" src="/agent-tools/asserts/js/bootstrap/js/bootstrap.js?version=1.0.0"></script>
+
+    <!-- noty -->
+    <script type="text/javascript" src="/agent-tools/asserts/js/noty/packaged/jquery.noty.packaged.js?version=1.0.0"></script>
+    <script type="text/javascript" src="/agent-tools/asserts/js/notify.js?version=1.0.0"></script>
+
+    <!-- bootbox dialog -->
+    <script type="text/javascript" src="/agent-tools/asserts/js/bootbox/bootbox.js?version=1.0.0"></script>
+    <script type="text/javascript" src="/agent-tools/asserts/js/moment/moment-with-locales.js?version=1.0.0"></script>
+
+    <!-- vuejs -->
+    <!--<script type="text/javascript" src="http://cdn.bootcss.com/vue/2.5.13/vue.common.js"></script>-->
+    <!--<script type="text/javascript" src="http://cdn.bootcss.com/vue/2.5.13/vue.js"></script>-->
+    <!--<script type="text/javascript" src="/agent-tools/asserts/js/vue/vue.min.js"></script>-->
+    <script src="https://unpkg.com/vue"></script>
+
+</head>
+
+<body>
+    <div id="welcome">
+        <div class="container">
+            <div class="detail">
+                <div class="detail-title">
+                    <div class="detail-title-month"></div>
+                    <ul class="detail-title-week"></ul>
+                </div>
+                <div class="detail-content">
+                    <div class="detail-content-en">{{content}} </div>
+                    <div class="detail-content-zh">{{note}}</div>
+                    <div class="detail-banner">
+                        <img v-bind:src="picture2" class="placeholder detail-banner-img img-responsive center-block" options="size=620x383&text=&nbsp;&bgcolor=white" />
+                    </div>
+                    <blockquote class="detail-content-desc">{{translation}}</blockquote>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="src/app.js"></script>
+    <script type="text/javascript" src="src/welcome.js"></script>
+</body>

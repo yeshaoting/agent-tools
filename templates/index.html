@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <title>代理商桌面工具</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="代理商桌面工具"/>
+    <meta name="description" content="代理商桌面工具"/>
+    <meta name="author" content="叶绍亭"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/vue/2.5.13/vue.common.js"></script>
+    <script src="http://cdn.bootcss.com/vue/2.5.13/vue.js"></script>
+
+    <style>
+        .banner { position: relative; overflow: auto; }
+        .banner li { list-style: none; }
+        .banner ul li { float: left; }
+    </style>
+
+    <script>
+        $(function() {
+            $('.banner').unslider({
+                speed: 500,               //  The speed to animate each slide (in milliseconds)
+                delay: 3000,              //  The delay between slide animations (in milliseconds)
+                complete: function() {},  //  A function that gets called after every slide animation
+                keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+                dots: true,               //  Display dot navigation
+                fluid: false
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+<div id="app">
+    <div id="home">name:{{ app_name }}, name2:{{ app_name2 }}</div>
+</div>
+
+<div class="banner">
+    <ul>
+        <li><img src="http://lorempixel.com/400/200/?1"></li>
+        <li><img src="http://lorempixel.com/400/200/?2"></li>
+        <li><img src="http://lorempixel.com/400/200/?3"></li>
+    </ul>
+</div>
+
+<script src="../src/app.js"></script>
+<script src="../src/index.js"></script>
+
+<script src="//unslider.com/unslider.js"></script>
+
+</body>
+
+</html>
