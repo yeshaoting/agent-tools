@@ -4,7 +4,7 @@
  * @date Oct 24, 2016 4:14:30 PM
  */
 
-const app3 = {
+const app = {
     name: "代理商桌面工具",
     author: {
         account: "yeshaoting",
@@ -12,4 +12,4 @@ const app3 = {
     }
 };
 
-module.exports = app3;
+module.exports = app;
