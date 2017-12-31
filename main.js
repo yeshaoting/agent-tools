@@ -8,6 +8,16 @@ const BrowserWindow = electron.BrowserWindow;
 const Menu = electron.Menu;
 const Tray = electron.Tray;
 
+const log4js2 = require('./logger.js');
+var logger = log4js2.getLogger('log_file');
+logger.info("this is a log4js test1111111111111!");
+console.log("test test!!");
+
+var log4js = require('log4js');
+var logger = log4js.getLogger();
+logger.level = 'debug';
+logger.debug("Some debug messages");
+
 const ui = {
     width: 800,
     height: 600,

@@ -4,6 +4,7 @@
  * @date Oct 24, 2016 4:14:30 PM
  */
 
+
 console.log("home vue js~");
 
 var url = "http://sentence.iciba.com/index.php";
@@ -79,6 +80,16 @@ var home = new Vue({
         }
     }
 });
+
+// var log4js = require('log4js');
+// var logger = log4js.getLogger();
+// logger.level = 'debug';
+// logger.debug("Some debug messages");
+
+// const log4js = require('./logger.js');
+var logger = log4js.getLogger('log_file');
+logger.info("this is a log4js test1111111111111!");
+console.log("test test!!");
 
 //
 // var workspace = "/Users/yeshaoting/workspace/scripts/js/electron/agent-tools";
