@@ -1,41 +1,67 @@
 
 const path = require('path');
 const url = require('url')
+
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const Menu = electron.Menu;
+const Tray = electron.Tray;
 
 const ui = {
     width: 800,
     height: 600,
     template: "templates/index.html",
+    title: "代理商运营工具",
+    icon: "asserts/images/favicon.ico"
 }
 
 // 保持一个对于 window 对象的全局引用，如果你不这样做，
 // 当 JavaScript 对象被垃圾回收， window 会被自动地关闭
 let win;
 
+
+var appIcon = null;
 function createWindow() {
-  // 创建浏览器窗口。
-  win = new BrowserWindow({ width: ui.width, height: ui.height })
+    // 创建浏览器窗口。
+    win = new BrowserWindow({
+        width: ui.width,
+        height: ui.height,
+        center: true,
+        resizable: false,
+        title: ui.title,
+        icon: ui.icon,
+        frame: true,
+        // backgroundColor: '#66CD00'
+    });
 
-  // 然后加载应用的 index.html。
-  win.loadURL(url.format({
-    pathname: path.join(__dirname, ui.template),
-    protocol: 'file:',
-    slashes: true
-  }));
+    appIcon = new Tray(ui.icon);
+    var contextMenu = Menu.buildFromTemplate([
+        {label: 'Item1', type: 'radio'},
+        {label: 'Item2', type: 'radio'},
+        {label: 'Item3', type: 'radio', checked: true},
+        {label: 'Item4', type: 'radio'}
+    ]);
+    appIcon.setToolTip('This is my application.');
+    appIcon.setContextMenu(contextMenu);
 
-  // 打开开发者工具。
-  // win.webContents.openDevTools();
+    // 然后加载应用的 index.html。
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, ui.template),
+        protocol: 'file:',
+        slashes: true
+    }));
 
-  // 当 window 被关闭，这个事件会被触发。
-  win.on('closed', function() {
-    // 取消引用 window 对象，如果你的应用支持多窗口的话，
-    // 通常会把多个 window 对象存放在一个数组里面，
-    // 与此同时，你应该删除相应的元素。
-    win = null;
-  });
+    // 打开开发者工具。
+    // win.webContents.openDevTools();
+
+    // 当 window 被关闭，这个事件会被触发。
+    win.on('closed', function () {
+        // 取消引用 window 对象，如果你的应用支持多窗口的话，
+        // 通常会把多个 window 对象存放在一个数组里面，
+        // 与此同时，你应该删除相应的元素。
+        win = null;
+    });
 };
 
 // Electron 会在初始化后并准备

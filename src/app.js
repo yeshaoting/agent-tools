@@ -5,7 +5,7 @@
  */
 
 const app = {
-    name: "代理商桌面工具",
+    name: "代理商运营工具",
     author: {
         account: "yeshaoting",
         name: "叶绍亭"
