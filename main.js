@@ -21,9 +21,10 @@ logger.debug("Some debug messages");
 const ui = {
     width: 800,
     height: 600,
-    template: "templates/index.html",
+    template: "index.html",
     title: "代理商运营工具",
-    icon: "asserts/images/favicon.ico"
+    // icon: "asserts/images/favicon.ico"
+    icon: "asserts/images/leaf.png"
 }
 
 // 保持一个对于 window 对象的全局引用，如果你不这样做，
